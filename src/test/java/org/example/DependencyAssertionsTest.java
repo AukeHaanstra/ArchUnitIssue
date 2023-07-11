@@ -15,7 +15,7 @@ public class DependencyAssertionsTest {
     JavaClasses classes = new ClassFileImporter().importPackages(BASE_PACKAGE + AND_SUBPACKAGES);
 
     @Test
-    void ruleFailsForCDependsA() {
+    void ruleFailsForCDependsOnA() {
         assertThatThrownBy(
                 () -> noClasses().that().resideInAPackage(BASE_PACKAGE + ".c..").should().dependOnClassesThat()
                         .resideInAPackage(BASE_PACKAGE + ".a..").check(classes)).isInstanceOf(AssertionError.class);

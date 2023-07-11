@@ -12,7 +12,7 @@ public class D {
         try {
             b.doB();
         } catch (Ex ex) { // dependency NOT detected
-            log.info("Exception from e", ex);
+            log.info("Exception from ex", ex);
         }
     }
 }

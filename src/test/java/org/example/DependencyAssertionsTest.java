@@ -22,7 +22,7 @@ public class DependencyAssertionsTest {
     }
 
     @Test
-    void ruleFailsForDDependsOnA() {
+    void ruleFailsForDDependsOnA() { // fails
         assertThatThrownBy(
                 () -> noClasses().that().resideInAPackage(BASE_PACKAGE + ".d..").should().dependOnClassesThat()
                         .resideInAPackage(BASE_PACKAGE + ".a..").check(classes)).isInstanceOf(AssertionError.class);
@@ -36,7 +36,7 @@ public class DependencyAssertionsTest {
     }
 
     @Test
-    void ruleFailsForFDependsOnA() {
+    void ruleFailsForFDependsOnA() { // fails
         assertThatThrownBy(
                 () -> noClasses().that().resideInAPackage(BASE_PACKAGE + ".f..").should().dependOnClassesThat()
                         .resideInAPackage(BASE_PACKAGE + ".a..").check(classes)).isInstanceOf(AssertionError.class);
@@ -50,7 +50,7 @@ public class DependencyAssertionsTest {
     }
 
     @Test
-    void ruleFailsForHDependsOnA() {
+    void ruleFailsForHDependsOnA() { // fails
         assertThatThrownBy(
                 () -> noClasses().that().resideInAPackage(BASE_PACKAGE + ".h..").should().dependOnClassesThat()
                         .resideInAPackage(BASE_PACKAGE + ".a..").check(classes)).isInstanceOf(AssertionError.class);
